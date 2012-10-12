@@ -1,0 +1,60 @@
+  # customSubcategory=auth=Authentication Setup
+  # customSubcategory=db=Database Records
+  # customSubcategory=http=HTTP Query Settings
+
+  # cat=basic/enable; type=boolean; label=Frontend: Enable Google OAuth2 authentication in FE login forms. Stores users as FE users but shares other configuration.
+enableFE = 0
+
+  # cat=basic/enable; type=boolean; label=Backend: Enable Google OAuth2 authentication for the TYPO3 BE. Stores users as BE users but shares other configuration.
+enableBE = 0
+
+  # cat=basic/enable; type=boolean; label=Profile: Enable the MiniForm profile editor in FE, allowing users to edit a minimal profile corresponding with only the locally stored variables being editable
+enableProfile = 0
+
+  # cat=basic/auth; type=string; label=Auth Service endpoint: Usually this would simply be https://accounts.google.com/o/oauth2/auth. Note that for all URLs you can insert {domain} which will be replaced by the exact hostname that is being used to contact your TYPO3 site. This will allow you to add several URL sets in your Google Apps Console.
+authUrl = https://accounts.google.com/o/oauth2/auth
+
+  # cat=basic/auth; type=string; label=Callback address: Must match the URL registered with Google Apps. Note that the typeNum comes from Configuration/TypoScript/setup.txt which must be included as static template.
+returnUrl = http://{domain}/?type=1316773681
+
+  # cat=basic/auth; type=string; label=Target address: After authenticating, redirect to this URL.
+finalUrl = http://{domain}/
+
+  # cat=basic/auth; type=string; label=Error address: If authentication errors occur redirect to this URL.
+errorUrl = http://{domain}/loginError.html
+
+  # cat=basic/auth; type=string; label=Token refresh endpoing: After initial auth, this url is used to request a fresh, longer-lasting token.
+tokenRefreshUrl = https://accounts.google.com/o/oauth2/token
+
+  # cat=basic/auth; type=string; label=Client ID: The Client ID to use in requests (register one of these on Google Apps before you can use this service)
+clientId =
+
+  # cat=basic/auth; type=string; label=Secret key: API Secret (see Google OAuth2 API doc for access registration)
+secret =
+
+  # cat=basic/auth; type=string; label=Authentication scope(s): Scope(s) to request access to from this TYPO3 installation. This must contain at least the default value (https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email) but can be a list of comma separated scopes.
+scope = https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email
+
+  # cat=basic/auth; type=string; label=Email domain limiting: If filled, will only accept signon from users with this domain name in at least one of their email addresses registered with Google. Enter as "gmail.com" if email addresses should be "*@gmail.com" - enter multiple domain names with comma separation and add each subdomain you want to allow.
+domain = gmail.com
+
+  # cat=basic/db; type=string; label=Assign FE groups: When creating a fe_user record, assign these fe_groups to that user. REQUIRED.
+addUsersToGroups =
+
+  # cat=basic/db; type=string; label=Assign BE groups: When creating a be_user record, assign these be_groups to that user. REQUIRED unless "createAdminBeUsers" is enabled, or the BE user will not be able to use the backend.
+addBeUsersToGroups =
+
+  # cat=basic/db; type=boolean; label=Create admin BE users: When creating BE user records the "admin" field will be enabled if this option is enabled.
+createAdminBeUsers = 0
+
+  # cat=basic/db; type=string; label=DB Storage PID: Storage page UID for storing fe_user recods. Note: BE user records will always be stored at pid zero
+storagePid =
+
+  # cat=basic/db; type=string; label=Extbase integration: Create Extbase-type fe_user records. Fill this with the desired object type for created fe_user records. Naturally this requires Extbase to be loaded!
+recordType = Tx_Extbase_Domain_Model_FrontendUser
+
+  # cat=basic/http; type=string; label=Numeric array member prefix: PHP manual quote "If numeric indices are used in the base array and this parameter is provided, it will be prepended to the numeric index for elements in the base array only. This is meant to allow for legal variable names when the data is decoded by PHP or another CGI application later on."
+httpQueryNumericPrefix =
+
+  # cat=basic/http; type=string; label=Argument separator: PHP manual quote "[The value of the php.ini setting] arg_separator.output is used to separate arguments, unless this parameter is specified, and is then used."
+httpQueryArgumentSeparator = &

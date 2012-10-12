@@ -1,0 +1,64 @@
+form {
+	margin-bottom: 1.5em;
+}
+
+fieldset {
+	border: 0px transparent;
+	padding: 1.5em 0px 0px 0px;
+}
+
+fieldset legend {
+	margin-bottom: 1.5em;
+}
+
+.control-group {
+	margin-bottom: 18px;
+}
+
+.control-group label {
+	display: block;
+	float: left;
+	width: 160px;
+	clear: left;
+}
+
+.controls {
+	margin-left: 160px;
+}
+
+.controls p {
+	color: #a9a9a9;
+}
+
+.controls .disabled {
+	color: silver;
+}
+
+.form-controls {
+	padding-left: 160px;
+}
+
+.input-large {
+	width: 200px;
+}
+
+.input-small {
+	width: 70px;
+}
+
+.input-medium {
+	width: 122px;
+}
+
+.messages, .errors {
+	display: block;
+	padding: 10px;
+	border: 1px solid #f5f5f5;
+	list-style-type: none;
+	margin: 0px 0px 18px 0px;
+	color: #006400;
+}
+
+.errors {
+	color: #ff4500;
+}

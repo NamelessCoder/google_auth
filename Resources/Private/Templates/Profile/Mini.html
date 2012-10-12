@@ -1,0 +1,12 @@
+<f:layout name="Default" />
+
+<f:section name="Main">
+	<f:if condition="{error}">
+		<f:then>
+			<f:render partial="Profile/Error" arguments="{error: error, user: user}" />
+		</f:then>
+		<f:else>
+			<f:render partial="Profile/MiniForm" arguments="{user: user, errors: errors, groups: groups}" />
+		</f:else>
+	</f:if>
+</f:section>

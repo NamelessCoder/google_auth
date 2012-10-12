@@ -1,0 +1,82 @@
+<f:form action="save" object="{user}" name="user" controller="Profile" class="form form-horizontal">
+	<f:flashMessages class="messages messages-profile" />
+	<f:form.errors>
+		<fieldset class="errors">
+			<legend><h2><f:translate key="profile.form.errors" /></h2></legend>
+			<div class="error">
+				{error.message}
+				<f:if condition="{error.propertyName}">
+					<p>
+						<strong>{error.propertyName}</strong>:
+						<f:for each="{error.errors}" as="errorDetail">
+							{errorDetail.message}
+						</f:for>
+					</p>
+				</f:if>
+			</div>
+		</fieldset>
+	</f:form.errors>
+	<fieldset>
+		<legend><h2><f:translate key="profile.form.header" /></h2></legend>
+		<div class="control-group">
+			<label class="control-label"><f:translate key="profile.form.email" /></label>
+			<div class="controls">
+				<input disabled="disabled" value="{user.email}" class="input-large disabled" />
+				<p><f:translate key="profile.form.email.change.help" /></p>
+				<p><a href="{settings.links.googleAccount}"><f:translate key="profile.form.email.change" /></a></p>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"><f:translate key="profile.form.name" /></label>
+			<div class="controls">
+				<input disabled="disabled" value="{user.name}" class="input-large disabled" />
+				<p><f:translate key="profile.form.name.change.help" /></p>
+				<p><a href="{settings.links.googleAccount}"><f:translate key="profile.form.name.change" /></a></p>
+			</div>
+		</div>
+        <f:if condition="{settings.form.allowGroupSelection}">
+            <div class="control-group {f:if(condition: errors.user.group, then: 'error')}">
+                <label class="control-label"><f:translate key="profile.form.groups" /></label>
+                <div class="controls">
+                    <f:form.select property="usergroup" options="{groups}" optionLabelField="title" optionValueField="uid" multiple="TRUE" />
+                    <p><f:translate key="profile.form.groups.help" /></p>
+                </div>
+            </div>
+        </f:if>
+		<div class="control-group {f:if(condition: errors.user.title, then: 'error')}">
+			<label class="control-label"><f:translate key="profile.form.title" /></label>
+			<div class="controls">
+				<f:form.textfield property="title" class="input-large" />
+			</div>
+		</div>
+		<div class="control-group {f:if(condition: errors.user.address, then: 'error')}">
+			<label class="control-label"><f:translate key="profile.form.address" /></label>
+			<div class="controls">
+				<f:form.textfield property="address" class="input-large" />
+			</div>
+		</div>
+		<div class="control-group {f:if(condition: errors.user.zip, then: 'error')} {f:if(condition: errors.user.city, then: 'error')}">
+			<label class="control-label"><f:translate key="profile.form.zip" /> <f:translate key="profile.form.city" /></label>
+			<div class="controls">
+				<f:form.textfield property="zip" class="input-small" size="{f:translate(key: 'profile.form.zip.length', default: 6)}" /> <f:form.textfield property="city" class="input-medium" />
+			</div>
+		</div>
+		<div class="control-group {f:if(condition: errors.user.telephone, then: 'error')}">
+			<label class="control-label"><f:translate key="profile.form.telephone" /></label>
+			<div class="controls">
+				<f:form.textfield property="telephone" class="input-large" />
+				<p><f:translate key="profile.form.telephone.help" /></p>
+			</div>
+		</div>
+		<div class="control-group {f:if(condition: errors.user.www, then: 'error')}">
+			<label class="control-label"><f:translate key="profile.form.www" /></label>
+			<div class="controls">
+				<f:form.textfield property="www" class="input-large" />
+				<p><f:translate key="profile.form.www.help" /></p>
+			</div>
+		</div>
+		<div class="form-controls">
+			<button type="submit"><f:translate key="profile.form.submit" /></button>
+		</div>
+	</fieldset>
+</f:form>

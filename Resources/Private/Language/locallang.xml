@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Google OpenAuth v2 extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+            <label index="profile.form.header">Profile</label>
+            <label index="profile.form.email">Email address</label>
+            <label index="profile.form.email.change">Change email address (opens Google Account)</label>
+            <label index="profile.form.email.change.help">After changing your email address you must log out and then back in. Note that you will lose all changes to your local profile as your primary email is your account ID.</label>
+            <label index="profile.form.name">Full name</label>
+            <label index="profile.form.name.change">Change name (opens Google Account)</label>
+            <label index="profile.form.name.change.help">The changed name will be updated next time you log in.</label>
+            <label index="profile.form.groups">Groups</label>
+            <label index="profile.form.groups.help">Tip: hold down CTRL or CMD to select multiple. At least one is required.</label>
+            <label index="profile.form.groups.error">Please select at least one group.</label>
+            <label index="profile.form.title">Job title</label>
+            <label index="profile.form.address">Address</label>
+            <label index="profile.form.zip">Zip</label>
+            <label index="profile.form.zip.length">4</label>
+            <label index="profile.form.zip.error">Zip code does not match rule</label>
+            <label index="profile.form.city">and city</label>
+            <label index="profile.form.telephone">Phone number</label>
+            <label index="profile.form.telephone.help">Example: 99123456</label>
+            <label index="profile.form.telephone.error">Telephone number does not match rule, check that you did not use invalid characters and stayed below maximum length</label>
+            <label index="profile.form.www">Web address</label>
+            <label index="profile.form.www.help">Please remember to include http:// or https:// - or your link may not work correctly.</label>
+            <label index="profile.form.www.error">Invalid URL entered.</label>
+            <label index="profile.form.submit">Save profile data</label>
+            <label index="profile.form.errors">Errors occurred while saving your profile data</label>
+            <label index="profile.form.updated">Your profile data has been saved</label>
+		</languageKey>
+		<languageKey index="dk" type="array">
+            <label index="profile.form.header">Profil</label>
+            <label index="profile.form.email">Email-adresse</label>
+            <label index="profile.form.email.change">Skift email-adresse (åbner din Google konto)</label>
+            <label index="profile.form.email.change.help">Efter skift af email-adresse skal du logge ud og ind igen. Bemærk, at du mister alle dine øvrige oplysninger (pånær navn) når du skifter email, da email-adressen er dit konto-id hos Google.</label>
+            <label index="profile.form.name">Navn</label>
+            <label index="profile.form.name.change">Skift navn (åbner din Google konto)</label>
+            <label index="profile.form.name.change.help">Det nye navn vil blive synkroniseret næste gang du logger ind.</label>
+            <label index="profile.form.groups">Grupper</label>
+            <label index="profile.form.groups.help">Tip: hold CTRL eller CMD inde for at vælge flere. Mindst én gruppe er påkrævet.</label>
+            <label index="profile.form.groups.error">Der skal vælges mindst én gruppe.</label>
+            <label index="profile.form.title">Funktion</label>
+            <label index="profile.form.address">Adresse</label>
+            <label index="profile.form.zip">Postnummer</label>
+            <label index="profile.form.zip.length">4</label>
+            <label index="profile.form.zip.error">Postnummer er ikke gyldigt</label>
+            <label index="profile.form.city">og by</label>
+            <label index="profile.form.telephone">Telefon</label>
+            <label index="profile.form.telephone.help">Eksempel: 99123456</label>
+            <label index="profile.form.telephone.error">Telefonnummeret følger ikke reglerne. Kontrollér at du ikke har </label>
+            <label index="profile.form.www">Web-adresse</label>
+            <label index="profile.form.www.help">Inkludér venligst http:// eller https:// - ellers kan dit link blive vist forkert.</label>
+            <label index="profile.form.www.error">Ugyldig URL indtastet.</label>
+            <label index="profile.form.submit">Gem profil</label>
+            <label index="profile.form.errors">Fejl i profil-data</label>
+            <label index="profile.form.updated">Dine profil-data blev gemt</label>
+		</languageKey>
+	</data>
+</T3locallang>

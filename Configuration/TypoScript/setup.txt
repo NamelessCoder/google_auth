@@ -1,0 +1,43 @@
+GoogleAuthEndpoint = PAGE
+GoogleAuthEndpoint {
+    typeNum = 1316773681
+    config {
+    	no_cache = 1
+        disableAllHeaderCode = 1
+    }
+    headerData >
+    1316773681 = USER_INT
+    1316773681 {
+		userFunc = tx_extbase_core_bootstrap->run
+        extensionName = GoogleAuth
+        pluginName = Auth
+    }
+}
+
+plugin.tx_googleauth.view {
+	templateRootPath = {$plugin.tx_googleauth.view.templateRootPath}
+	partialRootPath = {$plugin.tx_googleauth.view.partialRootPath}
+	layoutRootPath = {$plugin.tx_googleauth.view.layoutRootPath}
+}
+
+plugin.tx_googleauth.settings {
+	links {
+		# Link to Google Account editing. Note: if you want to override the language, this is where you can do it
+		googleAccount = https://www.google.com/settings/?hl=en
+	}
+    form {
+        allowGroupSelection = 1
+    }
+	validation {
+		# User telephone number regular expression. Reverse logic; if the phone number validates TRUE using this expression, an error is thrown. Popular choices are [^0-9]{8} (require exactly eight pure digits), [^0-9\+\s]{0,12} (allow plus sign and spaces, max 12 digits/spaces including plus sign). To disable this validation, unset this variable.
+		user.telephone = [^0-9\+\s]{8,}
+		# User zip regular expression. Increase the required match count if your country has longer zip codes, add (XY){2} in front if you require the use of letters, the number specifies how many should be present and () denotes optional.
+		user.zip = [0-9]{4}
+		# User city. Only letters and spaces and the comma char. Note: your country may require unicode characters to be added to the list using the \0x00\0x00 format
+		user.city = [a-zA-Z\s\,]
+		# User web address regular expression
+		user.www = ^(http|ftp)(s)?\:\/\/((([a-z|0-9|\-]{1,25})(\.)?){2,7})($|/.*$)
+	}
+}
+
+page.includeCSS.file531535231 = EXT:google_auth/Resources/Public/Stylesheets/Common.css
